@@ -17,9 +17,10 @@
 
   span {
     color: var(--theme-fontColorSecondary);
+    font-size: var(--theme-fontSize);
   }
 
   span:not(:last-of-type) {
-    margin-right: var(--theme-spacingSmall);
+    margin-right: var(--theme-spacingMedium);
   }
 </style>

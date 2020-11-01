@@ -20,14 +20,14 @@
 	h1 {
 		color: var(--theme-fontColor);
 		text-transform: uppercase;
-		font-size: 6em;
+		font-size: var(--theme-fontSizeHeader);
 		font-weight: 100;
 	}
 
 	div {
 		color: var(--theme-fontColor);
 		text-transform: uppercase;
-		font-size: 4em;
+		font-size: var(--theme-fontSizeSubHeader);
 		font-weight: 100;
 	}
 

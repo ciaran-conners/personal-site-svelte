@@ -1,7 +1,7 @@
 <script>
   import { setContext, onMount } from 'svelte'
   import { writable } from 'svelte/store'
-  import { theme } from './theme.js'
+  import { theme } from '../lib/theme.js'
   
   // set up Theme store, holding current theme object
   const Theme = writable(theme);
