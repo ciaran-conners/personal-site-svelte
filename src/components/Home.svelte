@@ -4,7 +4,7 @@
 
 <main>
   <h1>Hi, I'm {name}!</h1>
-  <div>It's great to meet you...</div>
+  <h2>It's great to meet you...</h2>
 	<div
 		class="wave"
 		role="img"
@@ -12,7 +12,7 @@
 	>
 		<span title="Hello!">👋</span>
 	</div>
-  <div>Let's get started!</div>
+  <h2>Let's get started!</h2>
 </main>
 
 <style>
@@ -28,11 +28,15 @@
 		font-weight: 100;
 	}
 
-	div {
+	h2 {
 		font-size: var(--theme-fontSizeSubHeader);
 		font-weight: 100;
+		margin: 0;
+	}
 
+	div {
 		margin: var(--theme-spacingMedium) 0;
+		font-size: var(--theme-fontSizeSubHeader);
 	}
 
 	div.wave {
