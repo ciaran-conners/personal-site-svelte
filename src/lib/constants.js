@@ -28,17 +28,8 @@ export const resume = [
   ]},
   {'Education': [
     {
-      heading: 'Hack Reactor',
-      bulletPoints: [
-        'Software engineering immersive'
-      ],
-      years: '2017'
-    },
-    {
       heading: 'Columbia University',
-      bulletPoints: [
-        'Ivy league school'
-      ],
+      bulletPoints: [],
       years: '2011 - 2015'
     }
   ]}
