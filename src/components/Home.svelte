@@ -41,16 +41,13 @@
 
 	div.wave {
 		display: inline-block;
+		cursor: default;
 		-moz-user-select: none;
 		-webkit-user-select: none;
 		animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
 		animation-duration: 1.5s;        /* Change to speed up or slow down */
 		animation-iteration-count: infinite;  /* Never stop waving :) */
 		transform-origin: 70% 70%;       /* Pivot around the bottom-left palm */
-	}
-
-	div.wave span {
-		cursor: default;
 	}
 
 	@keyframes wave-animation {
