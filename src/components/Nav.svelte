@@ -7,6 +7,9 @@
     display: flex;
     justify-content: flex-end;
     width: 100%;
+
+    position: sticky;
+    top: 0;
   }
 
   span {
