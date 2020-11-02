@@ -7,7 +7,7 @@ export const resume = [
       bulletPoints: [
         'Developing applications that help match patients with care.',
         'Work as part of an agile, front-end team to extend - and at times rework - a large, legacy codebase.',
-        'using Xstate - state machine evangelist.',
+        'Using Xstate - state machine evangelist.',
         'Using React',
         'Using Redux',
         'Using Python in a Flask application that proxies calls made to Kyruus microservices.'
