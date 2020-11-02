@@ -5,15 +5,20 @@
 <main>
   <h1>Hi, I'm {name}!</h1>
   <div class="subtitle">It's great to meet you...</div>
-  <div class="wave" role="img" aria-label="Waving Hand Sign">👋</div>
-  <div class="subtitle">let's get started!</div>
+	<div
+		class="wave"
+		role="img"
+		aria-label="Waving Hand Sign"
+	>
+		<span title="Hello!">👋</span>
+	</div>
+  <div class="subtitle">Let's get started!</div>
 </main>
 
 <style>
 	main {
 		text-align: center;
 		padding: 1em;
-		max-width: 240px;
 		margin: 0 auto;
 	}
 
@@ -29,14 +34,26 @@
 		text-transform: uppercase;
 		font-size: var(--theme-fontSizeSubHeader);
 		font-weight: 100;
+
+		margin: var(--theme-spacingMedium) 0;
 	}
 
 	div.wave {
-		animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
-		animation-duration: 2.5s;        /* Change to speed up or slow down */
-		animation-iteration-count: infinite;  /* Never stop waving :) */
-		transform-origin: 70% 70%;       /* Pivot around the bottom-left palm */
 		display: inline-block;
+
+		-moz-user-select: none;
+		-webkit-user-select: none;
+	}
+
+	div.wave span {
+		cursor: default;
+	}
+
+	div.wave:hover {
+		animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
+		animation-duration: 1s;        /* Change to speed up or slow down */
+		animation-iteration-count: 0.5s;  /* Never stop waving :) */
+		transform-origin: 70% 70%;       /* Pivot around the bottom-left palm */
 	}
 
 	@keyframes wave-animation {
@@ -48,11 +65,5 @@
 		50% { transform: rotate(10.0deg) }
 		60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
 		100% { transform: rotate( 0.0deg) }
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
 	}
 </style>
