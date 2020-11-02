@@ -20,18 +20,15 @@
 		text-align: center;
 		padding: 1em;
 		margin: 0 auto;
+		color: var(--theme-fontColor);
 	}
 
 	h1 {
-		color: var(--theme-fontColor);
-		text-transform: uppercase;
 		font-size: var(--theme-fontSizeHeader);
 		font-weight: 100;
 	}
 
 	div {
-		color: var(--theme-fontColor);
-		text-transform: uppercase;
 		font-size: var(--theme-fontSizeSubHeader);
 		font-weight: 100;
 
@@ -49,10 +46,10 @@
 		cursor: default;
 	}
 
-	div.wave:hover {
+	div.wave {
 		animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
-		animation-duration: 1s;        /* Change to speed up or slow down */
-		animation-iteration-count: 0.5s;  /* Never stop waving :) */
+		animation-duration: 1.5s;        /* Change to speed up or slow down */
+		animation-iteration-count: infinite;  /* Never stop waving :) */
 		transform-origin: 70% 70%;       /* Pivot around the bottom-left palm */
 	}
 
