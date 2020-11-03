@@ -1,8 +1,9 @@
 <script>
+	import { fly } from "svelte/transition";
 	export let name;
 </script>
 
-<main>
+<main in:fly={{ x: 500, duration: 1000 }}>
   <h1>Hi, I'm {name}!</h1>
   <h2>It's great to meet you...</h2>
 	<div

@@ -1,6 +1,7 @@
 <script>
-  import { resume } from '../lib/constants';
+  import { fly } from 'svelte/transition';
   import WorkItem from './WorkItem.svelte';
+  import { resume } from '../lib/constants';
 </script>
 
 <style>
@@ -13,7 +14,7 @@
   }
 </style>
 
-<main>
+<main in:fly={{ y: 500, duration: 1000 }}>
 
   <h1>My work</h1>
 
