@@ -6,9 +6,9 @@ export const resume = [
         'Developing applications that help match patients with care.',
         'Work as part of an agile, front-end team to extend - and at times rework - a large, legacy codebase.',
         'Using Xstate - ❤️ statecharts.',
-        'Using React',
-        'Using Redux',
-        'Using Python in a Flask application that proxies calls made to Kyruus microservices.'
+        'Using React.',
+        'Using Redux.',
+        'Using Python & Flask.'
       ],
       years: 'July 2019 - present'
     },

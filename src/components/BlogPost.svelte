@@ -1,4 +1,5 @@
 <script>
+  import { fly } from 'svelte/transition';
   import Link from 'svelte-routing/src/Link.svelte';
   import { posts } from '../lib/posts';
 
@@ -28,7 +29,7 @@
   }
 </style>
 
-<main>
+<main in:fly={{ y: 500, duration: 1000 }}>
   <h1>
     {currentPost.title}
   </h1>
