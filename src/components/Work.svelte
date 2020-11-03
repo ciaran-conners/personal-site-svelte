@@ -14,7 +14,7 @@
   }
 </style>
 
-<main in:fly={{ y: 500, duration: 1000 }}>
+<main in:fly={{ y: -500, duration: 1000 }}>
 
   <h1>My work</h1>
 

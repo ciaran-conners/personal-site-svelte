@@ -1,19 +1,22 @@
 <script>
-	import { draw, fly } from "svelte/transition";
+	import { fly } from "svelte/transition";
+
 	export let name;
 </script>
 
-<main in:fly={{ x: 500, duration: 1000 }}>
-  <h1>Hi, I'm {name}!</h1>
-  <h2>It's great to meet you...</h2>
-	<div
-		class="wave"
-		role="img"
-		aria-label="Waving Hand Sign"
-	>
-		<span title="Hello!">👋</span>
-	</div>
-  <h2>Let's get started!</h2>
+<main>
+	<h1 in:fly={{ x: 500, duration: 1000 }}>Hi, I'm {name}!</h1>
+	<section in:fly={{ y: 500, delay: 1100, duration: 1000 }}>
+		<h2>It's great to meet you...</h2>
+		<div
+			class="wave"
+			role="img"
+			aria-label="Waving Hand Sign"
+		>
+			<span title="Hello!">👋</span>
+		</div>
+		<h2>Let's get started!</h2>
+	</section>
 </main>
 
 <style>
