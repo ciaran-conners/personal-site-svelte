@@ -3,7 +3,7 @@
 
   const pages = [
     ['/', 'Home'],
-    ['/work', 'Work'],
+    ['/work', 'Res-Oh-My!'],
     ['/blog', 'Blog']
   ];
 </script>
