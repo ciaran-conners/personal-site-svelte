@@ -1,5 +1,5 @@
 <script>
-	import { fly } from "svelte/transition";
+	import { draw, fly } from "svelte/transition";
 	export let name;
 </script>
 

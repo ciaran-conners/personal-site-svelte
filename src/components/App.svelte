@@ -5,6 +5,7 @@
 	import Nav from './Nav.svelte';
 	import Home from './Home.svelte';
 	import Work from './Work.svelte';
+	import Blog from "./Blog.svelte";
 
 	export let name;
 </script>
@@ -15,6 +16,7 @@
 		<Router>
 			<Route path="/" component="{Home}" {name} />
 			<Route path="/work" component="{Work}" />
+			<Route path="/blog" component="{Blog}" />
 		</Router>
 	</div>
 </ThemeContext>

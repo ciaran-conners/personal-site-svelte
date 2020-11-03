@@ -1,5 +1,11 @@
 <script>
   import { Router, Link } from 'svelte-routing';
+
+  const pages = [
+    ['/', 'Home'],
+    ['/work', 'Work'],
+    ['/blog', 'Blog']
+  ];
 </script>
 
 <style>
@@ -24,7 +30,8 @@
 
 <Router>
   <nav>
-    <span><Link to="/">Home</Link></span>
-    <span><Link to="/work">Work</Link></span>
+    {#each pages as [route, pageName]}
+      <span><Link to="{route}">{pageName}</Link></span>
+    {/each}
   </nav>
 </Router>

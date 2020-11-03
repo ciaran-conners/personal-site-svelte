@@ -1,7 +1,7 @@
 <script>
   import { fly } from 'svelte/transition';
   import WorkItem from './WorkItem.svelte';
-  import { resume } from '../lib/constants';
+  import { resume } from '../lib/resume';
 </script>
 
 <style>
