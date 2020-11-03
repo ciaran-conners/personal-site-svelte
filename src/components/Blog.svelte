@@ -29,9 +29,9 @@
   {:else}
     <h1 in:fly={{ x: 500, duration: 1000 }}>Welcome to my blog.</h1>
     <section in:fly={{ x: -500, duration: 1000, delay: 1000 }}>
-      {#each posts as { id, linkText }}
+      {#each posts as { id, title }}
         <h4>
-          <Link to="blog/posts/{id}">{linkText}</Link>
+          <Link to="blog/posts/{id}">{title}</Link>
         </h4>
       {/each}
     </section>

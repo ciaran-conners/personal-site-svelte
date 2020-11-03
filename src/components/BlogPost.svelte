@@ -1,7 +1,13 @@
 <script>
-  import { fly } from 'svelte/transition';
+  import { fade, fly } from 'svelte/transition';
+  import marked from 'marked';
+
   import Link from 'svelte-routing/src/Link.svelte';
   import { posts } from '../lib/posts';
+
+  const fadeIn = {
+    duration: 1200
+  };
 
   let id;
 
@@ -13,6 +19,8 @@
 
   const currentPost = getPost(id, posts);
 
+  const currentPostHtml = marked(currentPost.body);
+
   export { id };
 </script>
 
@@ -21,22 +29,31 @@
     font-weight: var(--theme-fontWeight);
   }
   h1 {
-    font-size: var(--theme-fontSizeHeader);
+    font-size: var(--theme-fontSizeSubHeader);
     font-weight: inherit;
+    margin: var(--theme-spacingExtraLarge) 0;
   }
-  p {
+  article {
     font-size: var(--theme-fontSize)
+  }
+  article time {
+    text-decoration: underline;
   }
 </style>
 
-<main in:fly={{ y: 500, duration: 1000 }}>
-  <h1>
-    {currentPost.title}
-  </h1>
-
-  {#each currentPost.paragraphs as paragraph}
-    <p>{paragraph}</p>
-  {/each}
-
-  <Link to="/blog">Back to posts.</Link>
+<main>
+  <article>
+    <header>
+      <h1
+        in:fly={{ x: -500, duration: fadeIn.duration + 200 }}
+      >{currentPost.title}</h1>
+      <time in:fade={fadeIn}>{currentPost.timestamp}</time>
+    </header>
+    <section in:fade={fadeIn}>
+      {@html currentPostHtml}
+    </section>
+    <footer in:fade={fadeIn}>
+      <Link to="/blog">Back to posts.</Link>
+    </footer>
+  </article>
 </main>
