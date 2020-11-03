@@ -7,8 +7,8 @@
 <style>
   main {
 		padding: 1em;
-		margin: 0 auto;
-	}
+    margin: 0 auto;
+  }
   h2 {
     font-style: italic;
   }

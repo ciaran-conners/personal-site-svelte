@@ -1,8 +1,18 @@
 <script>
 	import { fly } from "svelte/transition";
-
 	export let name;
 </script>
+
+<svelte:head>
+	<style>
+		/* set body styles to prevent jumping
+			after animation when scrollbar is hidden
+		*/
+		body {
+			overflow-y: hidden;
+		}
+	</style>
+</svelte:head>
 
 <main>
 	<h1 in:fly={{ x: 500, duration: 1000 }}>Hi, I'm {name}!</h1>

@@ -11,7 +11,7 @@
 </script>
 
 <ThemeContext>
-	<div id="body">
+	<div>
 		<Nav />
 		<Router>
 			<Route path="/" component="{Home}" {name} />
@@ -22,7 +22,7 @@
 </ThemeContext>
 
 <style>
-	div#body {
+	div {
 		padding: var(--theme-spacingExtraLarge)
 	}
 </style>
