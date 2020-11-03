@@ -5,6 +5,7 @@ export const theme = {
   fontSizeHeader: '6em',
   fontSizeSubHeader: '4em',
   fontSize: '1.5em',
+  fontWeight: 100,
 
   spacingSmall: '4px',
   spacingMedium: '8px',

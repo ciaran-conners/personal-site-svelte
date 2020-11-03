@@ -22,6 +22,11 @@ export const resume = [
         'Worked full-stack as part of a small, agile team, taking features from scratch to completion.',
       ],
       years: 'January 2018 - June 2019'
+    },
+    {
+      heading: 'Soul searching',
+      bulletPoints: [],
+      years: 'May 2015 - January 2018'
     }
   ]},
   {'Education': [

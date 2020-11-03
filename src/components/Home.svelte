@@ -7,6 +7,7 @@
 	<style>
 		/* set body styles to prevent jumping
 			after animation when scrollbar is hidden
+			(this style will only be applied to the body while on the /home route)
 		*/
 		body {
 			overflow-y: hidden;
@@ -32,19 +33,19 @@
 <style>
 	main {
 		text-align: center;
-		padding: 1em;
 		margin: 0 auto;
 		color: var(--theme-fontColor);
+		font-weight: var(--theme-fontWeight);
 	}
 
 	h1 {
 		font-size: var(--theme-fontSizeHeader);
-		font-weight: 100;
+		font-weight: inherit;
 	}
 
 	h2 {
 		font-size: var(--theme-fontSizeSubHeader);
-		font-weight: 100;
+		font-weight: inherit;
 		margin: 0;
 	}
 

@@ -15,7 +15,7 @@
     width: 100%;
 
     position: sticky;
-    top: 0;
+    top: var(--theme-spacingMedium);
   }
 
   span {

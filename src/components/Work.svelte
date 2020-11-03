@@ -8,9 +8,14 @@
   main {
 		padding: 1em;
     margin: 0 auto;
+    font-weight: var(--theme-fontWeight);
+  }
+  h1 {
+    font-weight: inherit;
   }
   h2 {
     font-style: italic;
+    font-weight: inherit;
   }
 </style>
 

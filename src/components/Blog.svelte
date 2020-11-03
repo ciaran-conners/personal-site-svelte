@@ -1,28 +1,56 @@
 <script>
-  import { fly } from 'svelte/transition';
+  import Link from 'svelte-routing/src/Link.svelte';
+  import { posts } from '../lib/posts';
+  import { fade, fly } from 'svelte/transition';
+
+  const getStaggeredEmojiDelay = (i) => {
+    const delay = ((i + 1) * 100) + 1000;
+    return delay;
+  };
+
+  const isUnderConstruction = false;
 </script>
 
-<main
-  in:fly={{ y: 500, x: -500, duration: 1000 }}
->
-  <h1
-    in:fly={{ x: -500, delay: 1000 }}
-  >
-    Under construction...
-  </h1>
-  {#each { length: 3 } as _}
-    <span>🚧</span>
-  {/each}
+<main>
+  {#if isUnderConstruction}
+    <h1
+      in:fly={{ x: -500, duration: 1000 }}
+    >
+      Under construction...
+      <span>
+        {#each { length: 3 } as _, i}
+          <span in:fade={{
+            delay: getStaggeredEmojiDelay(i),
+          }}
+          >🚧</span>
+        {/each}
+      </span>
+    </h1>
+  {:else}
+    <h1 in:fly={{ x: 500, duration: 1000 }}>Welcome to my blog.</h1>
+    <section in:fly={{ x: -500, duration: 1000, delay: 1000 }}>
+      {#each posts as { id, linkText }}
+        <h4>
+          <Link to="blog/posts/{id}">{linkText}</Link>
+        </h4>
+      {/each}
+    </section>
+  {/if}
 </main>
 
 <style>
   main {
-    font-size: var(--theme-fontSizeHeader);
+    font-weight: var(--theme-fontWeight);
   }
   h1 {
     font-size: inherit;
-    font-weight: 100;
+    font-weight: inherit;
     display: inline-block;
+    font-size: var(--theme-fontSizeHeader);
+  }
+  h4 {
+    font-size: var(--theme-fontSizeSubHeader);
+    font-weight: inherit;
   }
   span {
     font-size: inherit;

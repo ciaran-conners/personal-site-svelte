@@ -3,8 +3,15 @@
 </script>
 
 <style>
+  li {
+    font-weight: var(--theme-fontWeight);
+  }
   h3 {
     text-decoration: underline;
+    font-weight: inherit;
+  }
+  h4 {
+    font-weight: inherit;
   }
 </style>
 
