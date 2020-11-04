@@ -17,6 +17,14 @@
     font-style: italic;
     font-weight: inherit;
   }
+  @counter-style repeating-emoji {
+    system: cyclic;
+    symbols: "\1F431" "\1F436" "\1F984";
+    suffix: " ";
+  }
+  ul {
+    list-style-type: repeating-emoji;
+  }
 </style>
 
 <main in:fly={{ y: -500, duration: 1000 }}>
