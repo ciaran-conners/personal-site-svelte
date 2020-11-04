@@ -3,7 +3,6 @@
   import marked from 'marked';
 
   import Link from 'svelte-routing/src/Link.svelte';
-  import { posts } from '../lib/posts';
 
   const fadeIn = {
     duration: 1200
@@ -11,15 +10,36 @@
 
   let id;
 
-  const getPost = (id, posts) => (
-    posts.find((post) => {
-      return post.id === id;
-    })
-  );
+  const getCurrentPost = async (id) => {
+    const query = `filterByFormula=({id} = '${id}')`;
 
-  const currentPost = getPost(id, posts);
+    const res = await fetch(`https://api.airtable.com/v0/app1aXgt9akv9tvuo/Posts?${query}`, {
+      headers: {
+        'Authorization': 'Bearer keyMc7RGyflv5aZKP'
+      }
+    });
 
-  const currentPostHtml = marked(currentPost.body);
+    const data = await res.json();
+
+    const {
+      records: [
+        {
+          fields:
+            {
+              date,
+              title,
+              body
+            }
+        },
+      ]
+    } = data;
+    
+    return {
+      date,
+      title,
+      postHtml: marked(body)
+    };
+  };
 
   export { id };
 </script>
@@ -42,18 +62,20 @@
 </style>
 
 <main>
-  <article>
-    <header>
-      <h1
-        in:fly={{ x: -500, duration: fadeIn.duration + 200 }}
-      >{currentPost.title}</h1>
-      <time in:fade={fadeIn}>{currentPost.timestamp}</time>
-    </header>
-    <section in:fade={fadeIn}>
-      {@html currentPostHtml}
-    </section>
-    <footer in:fade={fadeIn}>
-      <Link to="/blog">Back to posts.</Link>
-    </footer>
-  </article>
+  {#await getCurrentPost(id) then { date, title, postHtml }}
+    <article>
+      <header>
+        <h1
+          in:fly={{ x: -500, duration: fadeIn.duration + 200 }}
+        >{title}</h1>
+        <time in:fade={fadeIn}>{date}</time>
+      </header>
+      <section in:fade={fadeIn}>
+        {@html postHtml}
+      </section>
+      <footer in:fade={fadeIn}>
+        <Link to="/blog">Back to posts.</Link>
+      </footer>
+    </article>
+  {/await}
 </main>
