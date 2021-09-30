@@ -9,5 +9,6 @@ app.listen(3000, () => {
 });
 
 app.get('*', (_, res) => {
+  console.log('received request');
   res.sendFile(__dirname + "/public/index.html")
 });

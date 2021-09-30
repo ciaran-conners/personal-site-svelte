@@ -1,16 +1,7 @@
 <script>
   import Link from 'svelte-routing/src/Link.svelte';
   import { fly } from 'svelte/transition';
-
-  const getPosts = async () => {
-    const res = await fetch('https://api.airtable.com/v0/app1aXgt9akv9tvuo/Posts', {
-      headers: {
-        'Authorization': 'Bearer keyMc7RGyflv5aZKP'
-      }
-    });
-    const data = await res.json();
-    return data;
-  };
+  import { getPosts } from '../lib/api';
 </script>
 
 <main>
@@ -29,12 +20,14 @@
 <style>
   main {
     font-weight: var(--theme-fontWeight);
+    color: var(--theme-fontColor);
   }
   h1 {
     font-size: inherit;
     font-weight: inherit;
     display: inline-block;
     font-size: var(--theme-fontSizeHeader);
+    color: inherit;
   }
   h4 {
     font-size: var(--theme-fontSizeSubHeader);

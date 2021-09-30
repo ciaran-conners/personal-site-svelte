@@ -1,46 +1,13 @@
 <script>
   import { fade, fly } from 'svelte/transition';
-  import marked from 'marked';
-
   import Link from 'svelte-routing/src/Link.svelte';
+  import { getCurrentPost } from '../lib/api';
 
   const fadeIn = {
     duration: 1200
   };
 
   let id;
-
-  const getCurrentPost = async (id) => {
-    const query = `filterByFormula=({id} = '${id}')`;
-
-    const res = await fetch(`https://api.airtable.com/v0/app1aXgt9akv9tvuo/Posts?${query}`, {
-      headers: {
-        'Authorization': 'Bearer keyMc7RGyflv5aZKP'
-      }
-    });
-
-    const data = await res.json();
-
-    const {
-      records: [
-        {
-          fields:
-            {
-              date,
-              title,
-              body
-            }
-        },
-      ]
-    } = data;
-    
-    return {
-      date,
-      title,
-      postHtml: marked(body)
-    };
-  };
-
   export { id };
 </script>
 

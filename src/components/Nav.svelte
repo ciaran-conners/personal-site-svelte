@@ -16,6 +16,8 @@
 
     position: sticky;
     top: var(--theme-spacingMedium);
+
+    font-weight: var(--theme-fontWeight);
   }
 
   span {

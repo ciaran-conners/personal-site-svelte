@@ -18,21 +18,13 @@
 </svelte:head>
 
 <ThemeContext>
-	<div>
-		<Nav />
-		<Router>
-			<Route path="/" component="{Home}" {name} />
-			<Route path="/work" component="{Work}" />
-			<Route path="/blog" component="{Blog}" />
-			<Route path="/blog/posts/:id" let:params>
-				<BlogPost id="{parseInt(params.id, 10)}" />
-			</Route>
-		</Router>
-	</div>
+	<Nav />
+	<Router>
+		<Route path="/" component="{Home}" {name} />
+		<Route path="/work" component="{Work}" />
+		<Route path="/blog" component="{Blog}" />
+		<Route path="/blog/posts/:id" let:params>
+			<BlogPost id="{parseInt(params.id, 10)}" />
+		</Route>
+	</Router>
 </ThemeContext>
-
-<style>
-	div {
-		padding: var(--theme-spacingExtraLarge)
-	}
-</style>

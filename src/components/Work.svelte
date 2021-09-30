@@ -9,6 +9,7 @@
 		padding: 1em;
     margin: 0 auto;
     font-weight: var(--theme-fontWeight);
+    color: var(--theme-fontColor);
   }
   h1 {
     font-weight: inherit;

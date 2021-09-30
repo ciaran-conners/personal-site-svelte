@@ -1,6 +1,8 @@
 export const theme = {
-  fontColor: '#ff3e00',
-  fontColorSecondary: '#00C1FF',
+  fontColor: '#4a2247',
+  fontColorSecondary: '#433860',
+  backgroundColor: '#98c680',
+  // https://coolors.co/462255-313b72-62a87c-7ee081-c3f3c0
 
   fontSizeHeader: '6em',
   fontSizeSubHeader: '4em',
