@@ -7,7 +7,7 @@
 <main>
   <h1 in:fly={{ x: 500, duration: 1000 }}>Welcome to my blog.</h1>
   {#await getPosts() then data}
-    <section in:fly={{ x: -500, duration: 1000, delay: 1000 }}>
+    <section in:fly={{ x: -500, duration: 1000 }}>
       {#each data.records as { fields: { id, title }}}
         <h4>
           <Link to="blog/posts/{id}">{title}</Link>

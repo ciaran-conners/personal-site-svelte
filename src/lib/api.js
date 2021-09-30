@@ -1,7 +1,7 @@
 import marked from 'marked';
 import axios from 'axios';
 
-const authToken = 'keyDkV79bGagxprvW';
+const authToken = window.AIRTABLE_AUTH_TOKEN;
 
 export const getPosts = async () => {
   const headers = {
@@ -30,11 +30,13 @@ export const getCurrentPost = async (id) => {
   console.log(data);
 
   const {
-    records: [
-      {
-        fields: { date, title, body },
+    records: [{
+      fields: {
+        date,
+        title,
+        body
       },
-    ],
+    }, ],
   } = data;
 
   return {

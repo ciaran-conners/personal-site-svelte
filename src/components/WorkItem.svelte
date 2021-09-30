@@ -21,6 +21,9 @@
   ul {
     list-style-type: repeating-emoji;
   }
+  li {
+    padding-left: 0.25em;
+  }
 </style>
 
 <li>
